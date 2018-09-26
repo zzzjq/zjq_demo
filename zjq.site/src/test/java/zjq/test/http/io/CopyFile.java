@@ -23,7 +23,7 @@ public class CopyFile {
 	public static void readFile(String path) throws Exception{
 		File file = new File(path);
 		FileInputStream in = new FileInputStream(file);
-		FileOutputStream out = new FileOutputStream(new File("F:\\txt.txt"));
+		FileOutputStream out = new FileOutputStream(new File("/Users/idealife/txt.txt"));
 		int length = 0;
 		byte[] bt = new byte[1024];
 		while((length = in.read(bt))!= -1){
