@@ -114,6 +114,6 @@ public class NioTest {
 	
 
 	public static void main(String[] args) throws InterruptedException, Exception{
-		readFile("/Users/idealife/2.txt");
+		readFile("/Users/idealife/nio.txt");
 	}
 }
