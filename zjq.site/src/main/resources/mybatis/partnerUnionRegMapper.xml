@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="zjq.demo.dao.PartnerUnionRegMapper">
+
+	<resultMap id="BaseResultMap" type="zjq.demo.model.PartnerUnionReg" >
+		<id column="ID" property="id" jdbcType="VARCHAR"/>
+		<result column="NAME" property="name" jdbcType="VARCHAR"/>
+		<result column="CARD_NO" property="cardNo" jdbcType="VARCHAR" />
+        <result column="REQ_NO" property="reqNo" jdbcType="VARCHAR" />
+        <result column="STATUS" property="status" jdbcType="VARCHAR" />
+		<result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP"/>
+        <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP"/>
+		<result column="AUTH" property="auth" jdbcType="VARCHAR"/>
+		<result column="BANK_CARD_NO" property="bankCardNo" jdbcType="VARCHAR"/>
+		<result column="PHONE_NO" property="phoneNo" jdbcType="VARCHAR"/>
+		<result column="BANK_CODE" property="bankCode" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<select id="query" resultMap="BaseResultMap"
+						parameterType="zjq.demo.model.PartnerUnionReg">
+		SELECT * FROM CROSS_FI.partner_union_reg t
+		<where>
+			<if test="id != null and id !=''">
+				t.id = #{id}
+			</if>
+			<if test="name != null and name != ''">
+				and t.name = #{name}
+			</if>
+			<if test="cardNo != null and cardNo !=''">
+				and t.card_no = #{cardNo}
+			</if>
+		</where>
+	</select>
+	
+	<insert id="insert" parameterType="zjq.demo.model.PartnerUnionReg">
+		<!-- <selectKey keyProperty="seqId" order="BEFORE" resultType="java.lang.String" >
+			SELECT 150 || cross_fi.seq_partner_union_req.nextval FROM DUAL
+		</selectKey> -->
+		insert into CROSS_FI.partner_union_reg 
+			(ID,NAME,CARD_NO,REQ_NO,STATUS,CREATE_DATE,
+			 UPDATE_DATE,AUTH,BANK_CARD_NO,PHONE_NO,BANK_CODE)
+		VALUES
+			(cross_fi.seq_partner_union_req.nextval,#{name,jdbcType=VARCHAR},
+			 #{cardNo,jdbcType=VARCHAR},#{reqNo,jdbcType=VARCHAR},
+			 #{status,jdbcType=VARCHAR},#{createDate,jdbcType=TIMESTAMP},
+			 #{updateDate,jdbcType=TIMESTAMP},#{auth,jdbcType=VARCHAR},
+			 #{bankCardNo,jdbcType=VARCHAR},#{phoneNo,jdbcType=VARCHAR},
+			 #{bankCode,jdbcType=VARCHAR})
+	</insert>
+	
+</mapper>

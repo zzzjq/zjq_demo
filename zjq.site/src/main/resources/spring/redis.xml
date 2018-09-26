@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         		http://www.springframework.org/schema/aop
+       			http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+           
+    <!-- POOL配置 -->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxActive" value="${redis.jedisPoolConfig.maxActive}"/>
+        <property name="maxIdle" value="${redis.jedisPoolConfig.maxIdle}"/>
+        <property name="maxWait" value="${redis.jedisPoolConfig.maxWait}"/>
+        <property name="testOnBorrow" value="${redis.jedisPoolConfig.testOnBorrow}"/>
+    </bean>
+
+    <!-- jedis shard信息配置 -->
+    <bean id="jedis.shardInfoCache" class="redis.clients.jedis.JedisShardInfo">
+        <constructor-arg index="0" value="${redis.jedis.shardInfoCache.host}"/>
+        <constructor-arg index="1" type="int" value="${redis.jedis.shardInfoCache.port}"/>
+    </bean>
+
+    <!-- jedis shard pool配置 -->
+    <bean id="shardedJedisPoolCache" class="redis.clients.jedis.ShardedJedisPool">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1">
+            <list>
+                <ref bean="jedis.shardInfoCache"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+   <bean id="redisCache" class="zjq.demo.redis.RedisCache">
+         <property name="shardedJedisPool" ref="shardedJedisPoolCache" />
+   </bean>
+
+</beans>
