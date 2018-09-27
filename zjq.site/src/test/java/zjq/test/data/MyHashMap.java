@@ -1,5 +1,7 @@
 package zjq.test.data;
 /**
+ * jdk 1.7的hashmap
+ * 
  * @author:zhangjq
  * @time:2017年4月27日 上午10:19:04
  * @version:v1.0
