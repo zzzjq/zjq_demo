@@ -30,7 +30,7 @@ public class RandomUtil {
 	public static void main(String[] args) {
 		ExecutorService e = Executors.newFixedThreadPool(5);
 		try {
-			for (int i = 0; i < 100; i++) {
+			for (int i = 0; i < 10; i++) {
 				e.submit(() -> {
 					System.out.println("当前线程" + Thread.currentThread().getName() + "--" + getRandom(16));
 				});

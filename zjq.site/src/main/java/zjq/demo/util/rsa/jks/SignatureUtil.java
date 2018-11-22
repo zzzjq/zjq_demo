@@ -38,10 +38,10 @@ public class SignatureUtil {
 	static final String gatewayPublicKey="gateway.publicKey";
 	
 	static String webPropertiesPath = "other/zjq.properties";
-//	static String windowsPropertiesPath = "D:\\gateway-security.propertes";
-//	static String linuxPropertiesPath = "/opt/config/gateway-security.propertes";
-	static String windowsFilePath = "D:\\";
-	static String linuxFilePath = "/opt/config";
+//	static String windowsPropertiesPath = "D:\\zjq.properties";
+//	static String linuxPropertiesPath = "/Users/idealife/zjq/zjq.properties";
+//	static String windowsFilePath = "D:\\";
+	static String linuxFilePath = "/Users/idealife/zjq/";
 	
 	static{
 		Properties p = new Properties();
@@ -50,7 +50,6 @@ public class SignatureUtil {
 			p.load(SignatureUtil.class.getClassLoader().getResourceAsStream(webPropertiesPath));
 			//读系统里的文件
 			//p.load(new FileInputStream(windowsPropertiesPath));
-			//map.put(gatewayKeyPath, windowsFilePath + p.getProperty(gatewayKeyPath) + "");
 			map.put(gatewayKeyPath, p.getProperty(gatewayKeyPath) + "");
 			map.put(gatewayStorepass, p.getProperty(gatewayStorepass) + "");
 			map.put(gatewayAlias, p.getProperty(gatewayAlias) + "");
@@ -122,7 +121,7 @@ public class SignatureUtil {
 			ks = KeyStore.getInstance("JKS");
 			FileInputStream fin;
 			try {
-				fin = new FileInputStream(windowsFilePath + keyStoreFile);
+				fin = new FileInputStream(linuxFilePath + keyStoreFile);
 				try {
 					try {
 						ks.load(fin, storeFilePass.toCharArray());

@@ -30,6 +30,7 @@ public class CharTest {
     	System.out.println(c.getBytes().length);
     	System.out.println(d.getBytes().length);
     	System.out.println(d.getBytes("gbk").length);
+    	System.out.println((char)97);
     }
 
 }
