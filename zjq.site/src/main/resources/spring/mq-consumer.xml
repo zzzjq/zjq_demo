@@ -7,5 +7,18 @@
 	<bean id="mqManager" class="zjq.demo.mq.MqManager">
 		<property name="nameAddrs" value="${rocketmq.namesrv.addr}" />
 	</bean>
-
+	
+	<!-- 事件驱动模式 -->
+	<bean id="consumer" class="zjq.demo.rocketmq.consumer.ClusterConsumer" init-method="init">
+		<property name="group" value="${rocketmq.group}" />
+		<property name="nameAddrs" value="${rocketmq.addr}" />
+		<property name="hold" >
+			<map>
+				<entry key="${rocketmq.topic.a}" value-ref="messageListener2" />
+				<entry key="${rocketmq.topic.b}" value-ref="messageListener3" />
+			</map>
+		</property>
+	</bean>
+	<bean id="messageListener2" class="zjq.demo.rocketmq.demoListener.MessageListener2"/>
+	<bean id="messageListener3" class="zjq.demo.rocketmq.demoListener.MessageListener3"/>
 </beans>
