@@ -3,11 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd ">
-
-	<bean id="producer" class="zjq.demo.mq.Producer" init-method="init">
-		<property name="nameAddrs" value="${rocketmq.namesrv.addr}" />
-		<property name="group" value="zjqGroup" />
-	</bean>
 	
 	<bean id="defaultProducer" class="zjq.demo.rocketmq.producer.DefaultProducer" init-method="init">
 		<property name="nameAddrs" value="${rocketmq.namesrv.addr}" />

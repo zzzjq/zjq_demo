@@ -3,11 +3,6 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd ">
-
-	<!-- 简单例子 -->
-	<bean id="mqManager" class="zjq.demo.mq.MqManager">
-		<property name="nameAddrs" value="${rocketmq.namesrv.addr}" />
-	</bean>
 	
 	<!-- 事件驱动模式，以集群消费者为例 -->
 	<bean id="consumer" class="zjq.demo.rocketmq.consumer.ClusterConsumer" init-method="init">

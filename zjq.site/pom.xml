@@ -216,8 +216,8 @@
 	        <artifactId>zookeeper</artifactId>
 	        <version>${zookeeper.version}</version>
 	    </dependency>
-	    <!--rocketMq -->
-		<dependency>
+	    <!--rocketMq apache版本 -->
+		<!-- <dependency>
 			<groupId>com.alibaba.rocketmq</groupId>
 			<artifactId>rocketmq-client</artifactId>
 			<version>3.2.6</version>
@@ -231,22 +231,21 @@
 			<groupId>com.alibaba.rocketmq</groupId>
 			<artifactId>rocketmq-remoting</artifactId>
 			<version>3.2.6</version>
-		</dependency>
-		
+		</dependency> -->
 		<dependency>
 			<groupId>org.apache.rocketmq</groupId>
 			<artifactId>rocketmq-client</artifactId>
-			<version> 4.1.0-incubating</version>
+			<version>4.1.0-incubating</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.rocketmq</groupId>
 			<artifactId>rocketmq-common</artifactId>
-			<version> 4.1.0-incubating</version>
+			<version>4.1.0-incubating</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.rocketmq</groupId>
 			<artifactId>rocketmq-remoting</artifactId>
-			<version> 4.1.0-incubating</version>
+			<version>4.1.0-incubating</version>
 		</dependency>
 		<!-- dom4j -->
 		<dependency>
