@@ -22,19 +22,19 @@ public class MessageListenerHandle implements MessageListenerConcurrently {
 
 	private static final Logger logger = LoggerFactory.getLogger(MessageListenerHandle.class);
 
-	private ConcurrentHashMap<String, ConsumerListener> messageHold;
+	private ConcurrentHashMap<String, ConsumerListener> container;
 
 	private ExecutorService e;
 
-	public MessageListenerHandle(ExecutorService e, ConcurrentHashMap<String, ConsumerListener> messageHold) {
+	public MessageListenerHandle(ExecutorService e, ConcurrentHashMap<String, ConsumerListener> container) {
 		this.e = e;
-		this.messageHold = messageHold;
+		this.container = container;
 	}
 
 	@Override
 	public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
 		MessageExt message = msgs.get(0);
-		MessageConsumerListener listener = (MessageConsumerListener) messageHold.get(message.getTopic());
+		MessageConsumerListener listener = (MessageConsumerListener) container.get(message.getTopic());
 		e.submit(new Runnable() {
 
 			@Override

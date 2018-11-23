@@ -8,7 +8,7 @@
 	<bean id="consumer" class="zjq.demo.rocketmq.consumer.ClusterConsumer" init-method="init">
 		<property name="group" value="${rocketmq.group}" />
 		<property name="nameAddrs" value="${rocketmq.namesrv.addr}" />
-		<property name="hold" >
+		<property name="container" >
 			<map>
 				<entry key="${rocketmq.topic.a}" value-ref="messageListener2" />
 				<entry key="${rocketmq.topic.b}" value-ref="messageListener3" />
