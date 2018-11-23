@@ -31,6 +31,7 @@ public class DefaultProducer {
 	private final int maxMessageSize = 1024 * 512;
 
 	public void init() {
+		logger.info("DefaultProducer启动开始");
 		producer = new DefaultMQProducer(group);
 		producer.setNamesrvAddr(nameAddrs);
 		if (instanceName != null) {
@@ -43,20 +44,20 @@ public class DefaultProducer {
 		try {
 			producer.start();
 		} catch (Exception e) {
-			logger.info("MQ启动异常" + e);
-		} finally {
-			logger.info("MQ启动完成");
+			logger.error("DefaultProducer启动异常，error:{}", e);
 		}
+		logger.info("DefaultProducer启动结束");
 	}
 
 	public SendResult send(Message message) {
-
+		logger.info("发送消息开始，message:{}", message);
 		SendResult result = null;
 		try {
 			result = producer.send(message);
 		} catch (Exception e) {
 			logger.error("发送消息失败，message:{}, error:{}", message, e);
 		}
+		logger.info("发送消息结束，message:{}, result:{}", message, result);
 		return result;
 	}
 
