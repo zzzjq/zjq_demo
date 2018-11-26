@@ -29,26 +29,6 @@ public class ThreadLoaclTest {
 			});
 			threads[i].start();
 		}
-		/*Thread thread1 = new Thread(new Runnable() {		
-			@Override
-			public void run() {
-				int a = getInt();
-				System.out.println("thread1 :" +a);
-				a = a+10;
-				System.out.println("thread1 :" +a);
-
-			}
-		});
-		Thread thread2 = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				int b = getInt();
-				System.out.println("thread2 :" +b);
-				b = b+15;
-				System.out.println("thread2 :" +b);
-			}
-		});
-		thread1.start();
-		thread2.start();*/
 	}
+
 }
