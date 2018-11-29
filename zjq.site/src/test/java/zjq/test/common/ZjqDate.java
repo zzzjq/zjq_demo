@@ -11,8 +11,29 @@ import java.util.Date;
  * @version:v1.0
  */
 public class ZjqDate {
+	
+	/** 年月 <code>yyyy-MM</code> */
+	public static final String MONTH_PATTERN = "yyyy-MM";
 
-	private static final String FORMAT_YYYYMMDDHHMMSS = "yyyyMMddHHmmss";
+	/** 年月日 <code>yyyyMMdd</code> */
+	public static final String DEFAULT_PATTERN = "yyyyMMdd";
+
+	/** 年月日时分秒 <code>yyyyMMddHHmmss</code> */
+	public static final String FULL_PATTERN = "yyyyMMddHHmmss";
+
+	/** 年月日时分秒毫秒 <code>yyyyMMddHHmmssSSS</code> */
+	public static final String FULL_PATTERN_MILLISECOND = "yyyyMMddHHmmssSSS";
+
+	/** 标准格式的年月日时分秒 <code>yyyyMMdd HH:mm:ss</code> */
+	public static final String FULL_STANDARD_PATTERN = "yyyyMMdd HH:mm:ss";
+
+	/** 中文格式的年月日格式 <code>yyyy-MM-dd</code> */
+	public static final String CHINESE_PATTERN = "yyyy-MM-dd";
+
+	/** 中文格式的年月日时分秒格式 <code>yyyy-MM-dd HH:mm:ss</code> */
+	public static final String FULL_CHINESE_PATTERN = "yyyy-MM-dd HH:mm:ss";
+
+	public static final String DEFAULT_TIME_PATTERN = "HHmmss";
 	
 	/** 线程局部变量 **/
 	private static ThreadLocal<DateFormat> threadLocal = new ThreadLocal<>();
@@ -27,8 +48,8 @@ public class ZjqDate {
 		return df;
 	}
 
-	public static String getYYYYMMDDHHMMSS() {
-		return getFormat(FORMAT_YYYYMMDDHHMMSS).format(new Date());
+	public static String getDateByFormat(String format) {
+		return getFormat(format).format(new Date());
 	}
 
 	public static Date getDate(long time) {
@@ -60,7 +81,7 @@ public class ZjqDate {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(getYYYYMMDDHHMMSS());
+		System.out.println(getDateByFormat(FULL_PATTERN));
 		get();
 	}
 }

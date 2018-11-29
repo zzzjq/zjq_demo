@@ -43,8 +43,8 @@ public class Serializations {
 	
 	public static void main(String[] args) throws Exception{
 		Name name = new Name("张","三");
-		Serializations.serialize("F:\\aa.txt",name);
-		Object obj = Serializations.deserializle("F:\\aa.txt");
+		Serializations.serialize("/Users/idealife/zjq/aa.txt",name);
+		Object obj = Serializations.deserializle("/Users/idealife/zjq/aa.txt");
 		System.out.println(obj);
 	}
 }

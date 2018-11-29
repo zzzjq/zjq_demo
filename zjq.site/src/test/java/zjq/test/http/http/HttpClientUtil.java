@@ -120,7 +120,7 @@ public class HttpClientUtil {
 		list.add(new BasicNameValuePair("service", "sumpay.trade.order.refund.search"));
 		list.add(new BasicNameValuePair("format", "JSON"));
 		list.add(new BasicNameValuePair("app_id", "s100000040"));
-		list.add(new BasicNameValuePair("timestamp", ZjqDate.getYYYYMMDDHHMMSS()));
+		list.add(new BasicNameValuePair("timestamp", ZjqDate.getDateByFormat(ZjqDate.FULL_PATTERN)));
 		list.add(new BasicNameValuePair("terminal_type", "web"));
 		list.add(new BasicNameValuePair("terminal_info", "web"));
 		list.add(new BasicNameValuePair("sign_type", "RSA"));

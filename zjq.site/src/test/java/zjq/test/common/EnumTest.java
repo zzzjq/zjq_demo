@@ -33,5 +33,14 @@ public enum EnumTest{
 		this.desc = desc;
 	}
 	
+	public static EnumTest getByName(String name) {
+		if (null == name)
+			return null;
+		for (EnumTest test : EnumTest.values()) {
+			if (test.getName().equals(name))
+				return test;
+		}
+		return null;
+	}
 	
 }
