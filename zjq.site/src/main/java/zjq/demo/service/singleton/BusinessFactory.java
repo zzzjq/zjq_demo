@@ -1,4 +1,4 @@
-package zjq.test.main;
+package zjq.demo.service.singleton;
 /**
  * 静态内部类 保持单例
  * @author:zhangjq

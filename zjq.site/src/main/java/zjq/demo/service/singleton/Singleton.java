@@ -1,4 +1,4 @@
-package zjq.test.main;
+package zjq.demo.service.singleton;
 /**
  * 单例模式-双重锁
  * 线程安全并且效率高

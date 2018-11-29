@@ -1,4 +1,4 @@
-package zjq.test.main;
+package zjq.test.data;
 /**
  * @author:zhangjq
  * @time:2017年10月26日 下午2:37:01
