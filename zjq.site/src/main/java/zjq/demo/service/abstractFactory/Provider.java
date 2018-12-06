@@ -1,7 +1,5 @@
 package zjq.demo.service.abstractFactory;
 
-import java.util.HashMap;
-
 /**
  * @author:zhangjq
  * @time:2017年4月18日 下午3:15:38
