@@ -1,8 +1,8 @@
-package zjq.demo.dao;
+package zjq.dao.mapper;
 
 import java.util.List;
 
-import zjq.demo.model.Person;
+import zjq.dao.model.Person;
 
 /**
  * @author:zhangjq

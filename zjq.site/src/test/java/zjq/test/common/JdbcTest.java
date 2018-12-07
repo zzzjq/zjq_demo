@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import com.alibaba.fastjson.JSON;
 
-import zjq.demo.model.PartnerConfig;
+import zjq.dao.model.PartnerConfig;
 
 /**
  * @author:zhangjq

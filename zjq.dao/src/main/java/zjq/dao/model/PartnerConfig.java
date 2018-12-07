@@ -1,4 +1,4 @@
-package zjq.demo.model;
+package zjq.dao.model;
 
 /**
  * @author:zhangjq

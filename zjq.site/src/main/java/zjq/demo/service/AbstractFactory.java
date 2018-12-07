@@ -1,4 +1,4 @@
-package zjq.demo.common;
+package zjq.demo.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

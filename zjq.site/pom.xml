@@ -20,6 +20,11 @@
 			<artifactId>zjq.api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>zjq.work</groupId>
+			<artifactId>zjq.dao</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 		<!-- common -->
 		<dependency>  
 		    <groupId>commons-fileupload</groupId>  
@@ -36,11 +41,6 @@
             <artifactId>httpmime</artifactId>
             <version>4.5.2</version>
         </dependency>
-		<!-- <dependency>
-            <groupId>commons-httpclient</groupId>
-            <artifactId>commons-httpclient</artifactId>
-            <version>${commons-httpclient.version}</version>
-        </dependency> -->
         <dependency>  
 	        <groupId>commons-net</groupId>  
 	        <artifactId>commons-net</artifactId>  
@@ -51,11 +51,13 @@
             <artifactId>commons-lang</artifactId>
             <version>${commons-lang.version}</version>
         </dependency>
+        <!-- json -->
 	    <dependency>
 	        <groupId>com.alibaba</groupId>
 	        <artifactId>fastjson</artifactId>
 	        <version>1.2.31</version>
 	    </dependency>
+	    <!-- servlet -->
 	    <dependency>
 	        <groupId>javax.servlet</groupId>
 	        <artifactId>javax.servlet-api</artifactId>
@@ -73,6 +75,7 @@
 	    	<artifactId>jstl</artifactId>
 	    	<version>${jstl.version}</version>
 	    </dependency>
+	    <!-- cglib -->
 	    <dependency>
 	        <groupId>cglib</groupId>
 	        <artifactId>cglib</artifactId>
@@ -85,37 +88,7 @@
 	        <version>${redis.clients.version}</version>
 	        <type>jar</type>
 	    </dependency>
-	    <!-- 数据库 -->
-	    <dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-pool</groupId>
-			<artifactId>commons-pool</artifactId>
-			<version>1.5.2</version>
-		</dependency>
-	    <dependency>
-	        <groupId>com.alibaba</groupId>
-	        <artifactId>druid</artifactId>
-	        <version>${druid.version}</version>
-	    </dependency>
-	    <!-- <dependency>
-	        <groupId>ojdbc</groupId>
-	        <artifactId>ojdbc</artifactId>
-	        <version>${ojdbc14.version}</version>
-	    </dependency> -->
-	    <dependency>
-	        <groupId>org.mybatis</groupId>
-	        <artifactId>mybatis</artifactId>
-	        <version>${mybatis.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.mybatis</groupId>
-	        <artifactId>mybatis-spring</artifactId>
-	        <version>${mybatis.spring.version}</version>
-	    </dependency>
+	    
 	    <!-- 日志开始 -->
 	    <dependency>
 	        <groupId>log4j</groupId>
@@ -128,72 +101,8 @@
 	        <version>${slf4j.version}</version>
 	    </dependency>
 	    <!-- 日志结束 -->       
-		<!-- spring -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-aop</artifactId>
-		    <version>${spring.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-beans</artifactId>
-		    <version>${spring.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-context</artifactId>
-		    <version>${spring.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-context-support</artifactId>
-		    <version>${spring.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-tx</artifactId>
-		    <version>${spring.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-core</artifactId>
-		    <version>${spring.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-webmvc</artifactId>
-		    <version>${spring.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-orm</artifactId>
-		    <version>${spring.version}</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-test</artifactId>
-		    <version>${spring.version}</version>
-		    <scope>test</scope>
-		</dependency>
-		<dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>${spring.version}</version>
-            <scope>compile</scope>
-        </dependency>		
-		<!-- junit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-	      <!-- dubbo -->
+		
+	    <!-- dubbo -->
 	    <dependency>
 	        <groupId>com.alibaba</groupId>
 	        <artifactId>dubbo</artifactId>
@@ -264,7 +173,7 @@
 			<artifactId>hadoop-core</artifactId>
 			<version>1.0.0</version>
 		</dependency> -->
-		<!-- jackson -->
+		<!-- json -->
         <dependency>    
 	    <groupId>com.fasterxml.jackson.core</groupId>    
 		    <artifactId>jackson-core</artifactId>    
@@ -280,6 +189,11 @@
 		    <artifactId>jackson-annotations</artifactId>    
 		    <version>2.8.11</version>  
 		</dependency>
+		<dependency>
+	        <groupId>com.alibaba</groupId>
+	        <artifactId>fastjson</artifactId>
+	        <version>1.2.31</version>
+	    </dependency>
 		<!-- aspectj -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
