@@ -1,8 +1,5 @@
 package zjq.test.common;
 
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-
 /**
  * @author:zhangjq
  * @time:2017年7月11日 下午3:28:07
