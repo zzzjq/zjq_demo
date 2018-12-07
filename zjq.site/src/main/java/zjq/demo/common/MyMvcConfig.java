@@ -14,7 +14,7 @@
 // */
 //@Configuration
 //@EnableWebMvc
-//@ComponentScan("zjq.demo.commons")
+//@ComponentScan("zjq.demo.common")
 //public class MyMvcConfig {
 //
 //	@Bean
