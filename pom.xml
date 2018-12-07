@@ -153,6 +153,17 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.4</version>
             </plugin>
+            <plugin>
+		        <groupId>org.eclipse.jetty</groupId>
+		        <artifactId>jetty-maven-plugin</artifactId>
+		        <version>9.4.4.v20170414</version>
+		        <configuration>
+		            <scanIntervalSeconds>5</scanIntervalSeconds>
+		            <webApp>
+		                     <contextPath>/zjq.site</contextPath>
+		            </webApp>
+		        </configuration>
+		    </plugin>
         </plugins>
     </build>
 </project>

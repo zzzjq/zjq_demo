@@ -37,7 +37,7 @@ public class DownloadController {
 	@RequestMapping("/download1")
 	public ResponseEntity<byte[]> download1(HttpServletRequest request,
 			HttpServletResponse response) throws Exception{
-		File file = new File("F://好.txt");
+		File file = new File("/Users/idealife/1.txt");
 		//解决中文乱码问题
 		//String fileName = new String(file.getName().getBytes("utf-8"),"iso-8859-1");
 		InputStream in = new FileInputStream(file);

@@ -20,9 +20,9 @@
     
     <!-- <context:property-placeholder location="classpath*:application.properties"/> -->
     
-    <import resource="spring/spring-db.xml"/>
+    <!-- <import resource="spring/spring-db.xml"/>
     <import resource="spring/redis.xml"/>
-    <import resource="spring/mq-producer.xml"/>
+    <import resource="spring/mq-producer.xml"/> -->
 
     <!-- 自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 
     	   两个bean，分发controller请求 -->
