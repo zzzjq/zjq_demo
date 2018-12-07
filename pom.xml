@@ -20,10 +20,10 @@
 		<jdk.version>1.8</jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- common -->
+		<spring.version>4.3.9.RELEASE</spring.version>
 		<jsp.version>2.2</jsp.version>
 		<jstl.version>1.2</jstl.version>
 		<junit.version>4.12</junit.version>
-		<spring.version>4.3.9.RELEASE</spring.version>
 		<druid.version>1.0.14</druid.version>
 		<dubbo.version>2.5.3</dubbo.version>
 		<cglib.version>2.2.2</cglib.version>
@@ -106,6 +106,18 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
+		 <!-- 日志开始 -->
+	    <dependency>
+	        <groupId>log4j</groupId>
+	        <artifactId>log4j</artifactId>
+	        <version>${log4j.version}</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.slf4j</groupId>
+	        <artifactId>slf4j-log4j12</artifactId>
+	        <version>${slf4j.version}</version>
+	    </dependency>
+	    <!-- 日志结束 --> 
 	</dependencies>
 
 	<!-- 下载构建管理，可以在setting.xml里面配置，pom做个性化配置 -->

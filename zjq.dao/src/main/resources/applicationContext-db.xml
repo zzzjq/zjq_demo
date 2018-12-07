@@ -62,7 +62,7 @@
     <!-- mybatis-spring 配置 -->
     <!-- 扫描basePackage下的所有mapper，自动注册为MapperFactoryBean -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="zjq.demo.dao"/>
+        <property name="basePackage" value="zjq.dao.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
     <!-- 创建sqlSession会话 -->
@@ -72,8 +72,8 @@
     <!-- 创建sqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="zjq.demo.model"/>
-        <property name="mapperLocations" value="classpath*:mybatis/*.xml"/>
+        <property name="typeAliasesPackage" value="zjq.dao.model"/>
+        <property name="mapperLocations" value="classpath*:mapper/*.xml"/>
         <!-- 开启驼峰映射配置 -->
         <!-- <property name="configuration">
 		    <bean class="org.apache.ibatis.session.Configuration">

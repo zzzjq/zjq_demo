@@ -88,20 +88,6 @@
 	        <version>${redis.clients.version}</version>
 	        <type>jar</type>
 	    </dependency>
-	    
-	    <!-- 日志开始 -->
-	    <dependency>
-	        <groupId>log4j</groupId>
-	        <artifactId>log4j</artifactId>
-	        <version>${log4j.version}</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.slf4j</groupId>
-	        <artifactId>slf4j-log4j12</artifactId>
-	        <version>${slf4j.version}</version>
-	    </dependency>
-	    <!-- 日志结束 -->       
-		
 	    <!-- dubbo -->
 	    <dependency>
 	        <groupId>com.alibaba</groupId>
