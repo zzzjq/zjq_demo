@@ -24,33 +24,31 @@
     <import resource="spring/redis.xml"/>
     <import resource="spring/mq-producer.xml"/> -->
 
-    <!-- 自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 
-    	   两个bean，分发controller请求 -->
-    <!-- <mvc:annotation-driven /> -->
-    
+    <!-- 配置<context:component-scan>就不需要配置<context:annotation-config/> -->
+    <!-- <context:annotation-config/> -->
     <!-- 扫描包目录下的注解 -->
     <context:component-scan base-package="zjq.demo.*"/>
     
+    <!-- 自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 
+    	   两个bean，分发controller请求 -->
+    <mvc:annotation-driven />
+    <!-- DispatcherServlet请求映射配置为"/"，所以需要对静态资源进行处理，否则会找不到映射而报错 -->
     <!-- 对静态资源文件的访问 方法一  -->
-    <!-- <mvc:default-servlet-handler/> -->
-    
+    <mvc:default-servlet-handler/>
     <!-- 对静态资源文件的访问 方法二  -->
-    <!-- 
-    <mvc:resources mapping="/images/**" location="/images/" cache-period="31556926"/>  
+    <!-- <mvc:resources mapping="/images/**" location="/images/" cache-period="31556926"/>  
     <mvc:resources mapping="/js/**" location="/js/" cache-period="31556926"/>  
-    <mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/>   
-    -->
-    
-    
+    <mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/>   --> 
+    <!-- 对静态资源文件的访问 方法三 -->
+    <!-- 见web.xml -->
+   
     <!-- 视图解释类 -->  
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
         <property name="prefix" value="/WEB-INF/classes/views/"/>  
         <property name="suffix" value=".jsp"/>  
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />  
     </bean> 
-    
-    <bean class="zjq.demo.common.ApplicationContextUtil" />
-	
+    	
 	<!-- 上传文件 -->    
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
@@ -62,4 +60,8 @@
             <bean class="zjq.demo.common.LoginInterceptor"></bean>  
         </mvc:interceptor>  
     </mvc:interceptors>  
+    
+    <!-- ApplicationContextAware上下文 -->
+    <bean class="zjq.demo.common.ApplicationContextUtil" />
+
 </beans>
