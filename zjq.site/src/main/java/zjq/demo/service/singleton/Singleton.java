@@ -1,7 +1,7 @@
 package zjq.demo.service.singleton;
+
 /**
- * 单例模式-双重锁
- * 线程安全并且效率高
+ * 单例模式-双重校验锁 线程安全并且效率高
  * 
  * @author:zhangjq
  * @time:2017年10月26日 下午2:22:41
@@ -9,14 +9,15 @@ package zjq.demo.service.singleton;
  */
 public class Singleton {
 
-	private static Singleton SINGLETON;
-	
-	private Singleton(){}
-	
-	public static Singleton getInstance(){
-		if(SINGLETON == null){
-			synchronized (SINGLETON) {
-				if(SINGLETON == null)
+	private volatile static Singleton SINGLETON;
+
+	private Singleton() {
+	}
+
+	public static Singleton getInstance() {
+		if (SINGLETON == null) {
+			synchronized (Singleton.class) {
+				if (SINGLETON == null)
 					SINGLETON = new Singleton();
 			}
 		}
