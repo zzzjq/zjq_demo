@@ -6,5 +6,5 @@ package zjq.demo.service.proxy.staticProxy;
  */
 public interface Subject {
 
-	public abstract void say();
+	public void say();
 }
