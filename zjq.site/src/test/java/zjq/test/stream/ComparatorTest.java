@@ -1,4 +1,4 @@
-package zjq.test.data;
+package zjq.test.stream;
 
 import java.util.ArrayList;
 import java.util.Collections;
