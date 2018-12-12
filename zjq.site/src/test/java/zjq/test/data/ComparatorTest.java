@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import com.alibaba.fastjson.JSON;
 
@@ -66,25 +68,28 @@ public class ComparatorTest {
 		loanLenderItems.add(e3);
 		loanLenderItems.forEach(e -> System.out.println(JSON.toJSONString(e)));
 		System.out.println("=====");
-		Collections.sort(loanLenderItems, new Comparator<LoanLenderItem>() {
-			@Override
-			public int compare(LoanLenderItem o1, LoanLenderItem o2) {
-				if (Long.parseLong(o1.getBorrowNo()) > Long.parseLong(o2.getBorrowNo())) {
-					return 1;
-				} else if (Long.parseLong(o1.getBorrowNo()) == Long.parseLong(o2.getBorrowNo())) {
-					if (o1.getPeriod() >= o2.getPeriod()) {
-						return 1;
-					}
-					return -1;
-				} else {
-					return -1;
-				}
-			}
-		});
+//		Collections.sort(loanLenderItems, new Comparator<LoanLenderItem>() {
+//			@Override
+//			public int compare(LoanLenderItem o1, LoanLenderItem o2) {
+//				if (Long.parseLong(o1.getBorrowNo()) > Long.parseLong(o2.getBorrowNo())) {
+//					return 1;
+//				} else if (Long.parseLong(o1.getBorrowNo()) == Long.parseLong(o2.getBorrowNo())) {
+//					if (o1.getPeriod() >= o2.getPeriod()) {
+//						return 1;
+//					}
+//					return -1;
+//				} else {
+//					return -1;
+//				}
+//			}
+//		});
 
 		Thread.sleep(1000);
-
+		/**stream升级版排序**/
+		loanLenderItems = loanLenderItems.stream()
+				.sorted(Comparator.comparing(LoanLenderItem::getBorrowNo).thenComparing(LoanLenderItem::getPeriod))
+				.collect(Collectors.toList());
 		loanLenderItems.forEach(e -> System.out.println(JSON.toJSONString(e)));
-
 	}
+
 }
