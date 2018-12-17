@@ -8,9 +8,16 @@
 </head>
 <body>
 	<form action="loginMain" method="post">
-		用户名：<input type="text" name="userName"><p> 
+		用户名：<input type="text" name="userName" id="userName"><p> 
 		密    码：<input type="text" name="userName"><p>
 		<input type="submit" value="登录"> 
 	</form>
 </body>
 </html>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#userName").after('\%');
+});
+</script>
