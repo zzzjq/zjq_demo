@@ -1,7 +1,6 @@
 package zjq.demo.service.aopservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -15,8 +14,9 @@ public class Main {
 	HelloWorldServiceImpl helloWorldServiceImpl;
 	
 	public static void main(String[] args) throws Exception{
-		ApplicationContext ac = new ClassPathXmlApplicationContext(
+		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext(
 				"aop/spring-aop.xml");
+		ac.start();
 		HelloWorldService helloWorldService = (HelloWorldService) ac
 				.getBean("zjq");
 		helloWorldService.say();
