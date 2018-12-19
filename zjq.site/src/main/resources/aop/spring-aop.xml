@@ -12,8 +12,6 @@
     
     <context:component-scan base-package="zjq.demo.service.aopservice" />
     <aop:aspectj-autoproxy />
-
-	<!-- <bean id="helloWorldServiceImpl" class="zjq.demo.service.aopservice.HelloWorldServiceImpl" /> -->    
         
     <bean id="timeAopService" class="zjq.demo.service.aopservice.TimeAopService"/>    
             
