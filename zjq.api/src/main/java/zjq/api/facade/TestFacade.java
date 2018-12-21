@@ -7,4 +7,6 @@ package zjq.api.facade;
  **/
 public interface TestFacade {
 
+	public void zjq();
+
 }

@@ -19,7 +19,7 @@
     </bean>
     
     <!-- <context:property-placeholder location="classpath*:application.properties"/> -->
-    
+    <import resource="dubbo.xml"/>
     <!-- <import resource="spring/spring-db.xml"/>
     <import resource="spring/redis.xml"/>
     <import resource="spring/mq-producer.xml"/> -->
