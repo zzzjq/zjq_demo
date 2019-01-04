@@ -10,6 +10,10 @@ import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.conn.ssl.TrustStrategy;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
@@ -17,10 +21,12 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 
@@ -137,8 +143,85 @@ public class HttpsUtils {
         return builder.toString();
     }
     
-    public static void main(String[] args) throws Exception{
-    	System.out.println(post("https://127.0.0.1:8080/test/test.htm", 
-    			null, null, null));
+    /**
+	 * JSON格式post
+	 * @param url
+	 * @param header
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
+	public static String postJson(String url,Map<String, String> header, String request) throws Exception {
+		String result = "";
+		CloseableHttpClient httpClient = null;
+		try {
+			httpClient = getHttpClient();
+			HttpPost httpPost = new HttpPost(url);
+			httpPost.addHeader("Content-Type", "application/json");
+			// 设置头信息
+			if (header != null && header.size() > 0) {
+				for (Map.Entry<String, String> entry : header.entrySet()) {
+					httpPost.addHeader(entry.getKey(), entry.getValue());
+				}
+			}
+			// 设置请求参数
+			StringEntity entity = new StringEntity(request, "UTF-8");
+			httpPost.setEntity(entity);
+
+			HttpResponse httpResponse = httpClient.execute(httpPost);
+			int statusCode = httpResponse.getStatusLine().getStatusCode();
+			if (statusCode == HttpStatus.SC_OK) {
+				result = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
+			} else {
+				readHttpResponse(httpResponse);
+			}
+		} catch (Exception e) {
+			throw e;
+		} finally {
+			if (httpClient != null) {
+				httpClient.close();
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * 上传文件
+	 * MAP里面，key是文件名，value是Base64编码后的二进制流
+	 * @param url
+	 * @param fileMap
+	 * @return
+	 * @throws Exception
+	 */
+    public static String postFile(String url, Map<String, String> fileMap) throws Exception{
+        String result = "";
+        CloseableHttpClient httpClient = null;
+        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+        for(Map.Entry<String, String> entry : fileMap.entrySet()) {
+            builder.addBinaryBody("file", new ByteArrayInputStream(Base64.getDecoder().decode(entry.getValue())), ContentType.DEFAULT_BINARY, entry.getKey());
+        }
+        StringBody b = new StringBody("这里是值", ContentType.create("text/plain", "UTF-8"));
+        builder.addPart("这里是KEY", b);
+        try {
+            httpClient = getHttpClient();
+            HttpPost httpPost = new HttpPost(url);
+            HttpEntity entity = builder.build();
+            httpPost.setEntity(entity);
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+            int statusCode = httpResponse.getStatusLine().getStatusCode();
+            if (statusCode == HttpStatus.SC_OK) {
+                result = EntityUtils.toString(httpResponse.getEntity(), "UTF-8");
+            } else {
+                readHttpResponse(httpResponse);
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            if (httpClient != null) {
+                httpClient.close();
+            }
+        }
+        return result;
     }
+
 }

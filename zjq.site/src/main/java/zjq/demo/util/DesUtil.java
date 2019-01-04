@@ -64,10 +64,10 @@ public class DesUtil {
     }
 
     public static void main(String[] args) throws Exception {
-        String str = "{\"header\":{\"seqNo\":\"39210830921\",\"applySerialNo\":\"39210830921\",\"success\":\"true\"},\"responseBody\":{\"loanApplyId\":\"123456\"}}";
-        String encryptText = DesUtil.encode(str, "ZBVLQRSH94728561!~#$*&%@");
+        String str = "{\"header\":{\"seqNo\":\"123456\",\"applySerialNo\":\"123456\",\"success\":\"true\"},\"responseBody\":{\"loanApplyId\":\"123456\"}}";
+        String encryptText = DesUtil.encode(str, "ZJQ123456!~#$*&%@");
         System.out.println(encryptText);
-        System.out.println(DesUtil.decode(encryptText, "ZBVLQRSH94728561!~#$*&%@"));
+        System.out.println(DesUtil.decode(encryptText, "ZJQ123456!~#$*&%@"));
     }
 
 }

@@ -14,8 +14,6 @@ import java.security.spec.X509EncodedKeySpec;
 
 import javax.crypto.Cipher;
 
-import org.apache.commons.codec.binary.Base64;
-
 /**
  * 公钥加密
  * @author:zhangjq
@@ -156,22 +154,7 @@ public class KeyUtil {
 		}
 		catch(Exception e){
 			return null;
-		}
-		
+		}		
 	}
-	
-	public static void main(String[] args) throws Exception{
-		//获取私钥
-		System.out.println(new String(Base64.encodeBase64(getStoredPrivateKey("D:\\opt\\ttf\\config\\gateway\\privatekey.key").getEncoded())));
-		System.out.println(getStoredPrivateKey("D:\\opt\\ttf\\config\\gateway\\privatekey.key"));
-		//获取公钥
-		System.out.println(new String(Base64.encodeBase64(getStoredPublicKey("D:\\opt\\ttf\\config\\gateway\\publickey.key").getEncoded())));
-		System.out.println(getStoredPublicKey("D:\\opt\\ttf\\config\\gateway\\publickey.key"));
-		//公钥加密
-		byte[] msg = encrypt(getStoredPublicKey("D:\\opt\\ttf\\config\\gateway\\publickey.key"), "123456789".getBytes("utf-8"));
-		System.out.println(new String(Base64.encodeBase64(msg)));
-		//私钥解密
-		byte[] mss = decrypt(getStoredPrivateKey("D:\\opt\\ttf\\config\\gateway\\privatekey.key"), msg);
-		System.out.println(new String(mss));
-	}
+
 }

@@ -66,12 +66,6 @@ public class ZipUtil {
 
 		System.out.println(ZipUtil.uncompress(tmp));
 		System.out.println(ZipUtil.uncompress(tmp2));
-		
-		Map map = new HashMap();
-		map.put("11", "22");
-		map.put("22", "33");
-		String src3 = "{\"11\":\"" + map.get("11") + "\"" + "}";
-		System.out.println(src3);
 	}
 
 }
