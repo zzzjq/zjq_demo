@@ -27,9 +27,9 @@ public class JdbcTest {
 		Connection connection = null;
 		try{
 			Class.forName("oracle.jdbc.OracleDriver");
-			url = "jdbc:oracle:thin:@192.168.11.142:1521:crossborder";
-			user = "cross";
-			pwd = "cross123";
+			url = "jdbc:oracle:thin:@127.0.0.1:1521:test";
+			user = "test";
+			pwd = "test";
 			connection = DriverManager.getConnection(url, user, pwd);
 			return connection;
 		}

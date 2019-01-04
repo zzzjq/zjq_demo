@@ -138,7 +138,7 @@ public class HttpsUtils {
     }
     
     public static void main(String[] args) throws Exception{
-    	System.out.println(post("https://open.singlewindow.gz.cn/swcbes/client/declare/sendMessage.action", 
+    	System.out.println(post("https://127.0.0.1:8080/test/test.htm", 
     			null, null, null));
     }
 }

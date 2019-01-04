@@ -117,17 +117,14 @@ public class HttpClientUtil {
 	public static void main(String[] args) throws Exception{
 		List<NameValuePair> list = new ArrayList<NameValuePair>();
 		list.add(new BasicNameValuePair("version", "1.0"));
-		list.add(new BasicNameValuePair("service", "sumpay.trade.order.refund.search"));
+		list.add(new BasicNameValuePair("service", "test.test"));
 		list.add(new BasicNameValuePair("format", "JSON"));
-		list.add(new BasicNameValuePair("app_id", "s100000040"));
 		list.add(new BasicNameValuePair("timestamp", ZjqDate.getDateByFormat(ZjqDate.FULL_PATTERN)));
 		list.add(new BasicNameValuePair("terminal_type", "web"));
 		list.add(new BasicNameValuePair("terminal_info", "web"));
 		list.add(new BasicNameValuePair("sign_type", "RSA"));
 		list.add(new BasicNameValuePair("sign", ""));
-		list.add(new BasicNameValuePair("mer_id", "100100115200377"));
-		list.add(new BasicNameValuePair("refund_no", "R20151228173347170"));
-		String response = post("https://webgate.sumpay.cn:8088/webgate/payForDeclare.htm", list);
+		String response = post("https://127.0.0.1:8080/test/test.htm", list);
 		System.out.println(response);
 	}
 }
