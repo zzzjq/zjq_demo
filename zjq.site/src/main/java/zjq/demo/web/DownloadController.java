@@ -58,8 +58,8 @@ public class DownloadController {
 		OutputStream os = null;
 		try {
 			String fileName = "";
-			inputStream = DownloadController.class.getResourceAsStream("/other/BatchPay2AcctTemplate.csv");
-			fileName = "BatchPay2AcctTemplate.csv";
+			inputStream = DownloadController.class.getResourceAsStream("/other/1.txt");
+			fileName = "1.txt";
 			response.setHeader("content-type", "text/html;charset=UTF-8");
 			response.addHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode(fileName, "utf-8"));
 			response.setBufferSize(1024);        

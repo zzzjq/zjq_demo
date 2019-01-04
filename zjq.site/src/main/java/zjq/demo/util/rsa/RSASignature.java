@@ -15,6 +15,8 @@ import java.util.Base64;
 import javax.crypto.Cipher;
 
 public class RSASignature {
+	
+	public static final String SIGN_ALGORITHMS = "SHA1WithRSA";
 
 	/**
 	 * 
@@ -109,8 +111,6 @@ public class RSASignature {
 		return privateKey;
 
 	}
-
-	public static final String SIGN_ALGORITHMS = "SHA1WithRSA";
 
 	/**
 	 * RSA签名
