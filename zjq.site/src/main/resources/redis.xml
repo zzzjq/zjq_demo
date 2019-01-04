@@ -31,8 +31,4 @@
         </constructor-arg>
     </bean>
 
-   <bean id="redisCache" class="zjq.demo.redis.RedisCache">
-         <property name="shardedJedisPool" ref="shardedJedisPoolCache" />
-   </bean>
-
 </beans>

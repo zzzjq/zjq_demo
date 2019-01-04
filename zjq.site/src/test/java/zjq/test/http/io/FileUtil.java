@@ -84,8 +84,6 @@ public class FileUtil {
 		list.add("222|333|444");
 		list.add("OK");
 		System.out.println(writeToBase64String(list));
-		System.out.println(readBase64String("MTExfDIyMnwzMzMKMjIyfDMzM3w0NDQKT0sK"));
-		System.out.println(readBase64String("OTAyN3xIVDEwMDIxODIwMjUwMTIzMDM0MDg5NzAwMXwyMDE4MDkwNTEyMjYwMDAzOTF8MTEzMy4wMHwxMTAwLjAwfDMzLjAwfDAuMDB8MC4wMHwwLjAwCjkwMjd8SFQxMDAyMTgyMDI1MDEyNDAzNDA4OTkwMDF8MjAxODA5MDUxNTEwMDAwMTM0fDEwMzAuMDB8MTAwMC4wMHwzMC4wMHwwLjAwfDAuMDB8MC4wMAo="));
 	} 
 
 }
