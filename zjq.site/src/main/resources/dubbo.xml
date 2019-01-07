@@ -18,7 +18,7 @@
 	<!-- 使用per暴露服务地址 -->
 	<dubbo:registry id="servicesRegistry" group="dubbo" protocol="zookeeper" address="${zookeeper.list}" />
 		
-    <!--新账户服务 -->
+    <!--暴露服务 -->
     <bean name="testFacadeImpl" class="zjq.demo.service.TestFacadeImpl"/>    
     <dubbo:service registry="servicesRegistry"
         interface="zjq.api.facade.TestFacade" ref="testFacadeImpl"
