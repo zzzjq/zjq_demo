@@ -19,8 +19,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import zjq.test.common.ZjqDate;
-
 /**
  * httpClient调用
  * @author:zhangjq
@@ -119,7 +117,7 @@ public class HttpClientUtil {
 		list.add(new BasicNameValuePair("version", "1.0"));
 		list.add(new BasicNameValuePair("service", "test.test"));
 		list.add(new BasicNameValuePair("format", "JSON"));
-		list.add(new BasicNameValuePair("timestamp", ZjqDate.getDateByFormat(ZjqDate.FULL_PATTERN)));
+		list.add(new BasicNameValuePair("timestamp", "2019-01-01 00:00:00"));
 		list.add(new BasicNameValuePair("terminal_type", "web"));
 		list.add(new BasicNameValuePair("terminal_info", "web"));
 		list.add(new BasicNameValuePair("sign_type", "RSA"));
