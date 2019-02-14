@@ -9,6 +9,7 @@ package zjq.demo.service.singleton;
  */
 public class Singleton {
 
+	//volatile 防止两个线程同时通过第一个if判断。
 	private volatile static Singleton SINGLETON;
 
 	private Singleton() {
