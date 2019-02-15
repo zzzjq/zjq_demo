@@ -7,7 +7,7 @@ public class InterruptTest extends Object implements Runnable {
 			System.out.println("start");
 			Thread.sleep(2000);
 			System.out.println("wakeup");
-//			Thread.interrupted();
+			Thread.interrupted();
 		}catch(InterruptedException e){
 			System.out.println("interrupted");
 			return;
@@ -19,12 +19,6 @@ public class InterruptTest extends Object implements Runnable {
 		InterruptTest a = new InterruptTest();
 		Thread t = new Thread(a);
 		t.start();
-		
-		try{
-			Thread.sleep(1000);
-		}catch(InterruptedException e){
-			e.printStackTrace();
-		}
 		System.out.println("interrupted other");
 		t.interrupt();
 		System.out.println("leaving");
