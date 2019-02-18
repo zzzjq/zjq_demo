@@ -1,4 +1,4 @@
-package zjq.test.common;
+package zjq.demo.service.singleton;
 
 /**
  * 单例模式
@@ -9,13 +9,13 @@ package zjq.test.common;
  **/
 
 // 饿汉模式，线程安全，但是没有lazyloading
-public class Singleton {
-	private static Singleton instance = new Singleton();
+public class SingletonDemo {
+	private static SingletonDemo instance = new SingletonDemo();
 
-	private Singleton() {
+	private SingletonDemo() {
 	}
 
-	public static Singleton getInstance() {
+	public static SingletonDemo getInstance() {
 		return instance;
 	}
 }
@@ -66,14 +66,14 @@ class CC {
 
 // 双重锁定,线程安全,效率高
 class Factory {
-	private static Factory FACTORY;
+	private static volatile Factory FACTORY;
 
 	private Factory() {
 	}
 
 	public static Factory getFactory() {
 		if (FACTORY == null) {
-			synchronized (FACTORY) {
+			synchronized (Factory.class) {
 				if (FACTORY == null)
 					FACTORY = new Factory();
 			}
