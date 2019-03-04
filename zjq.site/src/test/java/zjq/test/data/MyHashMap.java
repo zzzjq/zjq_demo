@@ -104,7 +104,7 @@ public class MyHashMap {
 			entry = entry.getNext();
 		}
 		
-		return null;
+		return entry;
 	}
 	
 	public void remove(Object key){
