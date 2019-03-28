@@ -1,7 +1,7 @@
 package zjq.demo.util.cache;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 本地缓存
@@ -12,7 +12,7 @@ import java.util.Map;
 public class LocalCache {
 
 	/**容器**/
-	private static Map<String, Content> map = new HashMap<String, Content>();
+	private static ConcurrentHashMap<String, Content> map = new ConcurrentHashMap<String, Content>();
 	
 	/**检测过期任务**/
 	static{

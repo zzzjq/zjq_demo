@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="zjq.demo.dao.PartnerConfigMapper">
 
-	<select id="query" resultType="zjq.demo.model.PartnerConfig"
-						parameterType="zjq.demo.model.PartnerConfig">
+	<select id="query" resultType="zjq.dao.model.PartnerConfig"
+						parameterType="zjq.dao.model.PartnerConfig">
 		SELECT * FROM CROSS_FI.PARTNER_CONFIG t
 		WHERE
 		<if test="memberCode != null and memberCode!=''">
