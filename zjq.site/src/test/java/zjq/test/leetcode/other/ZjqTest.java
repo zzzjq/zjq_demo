@@ -1,4 +1,4 @@
-package zjq.test.leetcode;
+package zjq.test.leetcode.other;
 
 import java.util.HashSet;
 

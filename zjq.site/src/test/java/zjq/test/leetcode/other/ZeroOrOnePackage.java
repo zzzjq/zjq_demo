@@ -1,4 +1,4 @@
-package zjq.test.leetcode;
+package zjq.test.leetcode.other;
 
 /**
  * 蚂蚁金服面试题 0/1背包问题
