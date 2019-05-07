@@ -1,5 +1,6 @@
 package zjq.demo.util;
 
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
@@ -911,9 +912,13 @@ public class DateUtil {
 
 	public static void main(String[] args) {
 		Date date = new Date();
-		System.out.println(getDateByAdd("d", -2, DateUtil.clearHMS(date)));
-		System.out.println(getDateByAddMonth(1, date));
-		System.out.println(getDateDf("2018-09-06", DateUtil.DEFAULT_PATTERN));
+//		System.out.println(getDateByAdd("d", -2, DateUtil.clearHMS(date)));
+//		System.out.println(getDateByAddMonth(1, date));
+//		System.out.println(getDateDf("2018-09-06", DateUtil.DEFAULT_PATTERN));
+		System.out.println(toLastDayStart(date));
+		System.out.println(toLastDayEnd(date));
+		Timestamp t = new Timestamp(toLastDayEnd(date).getTime());
+		System.out.println(t);
 	}
 
 }
