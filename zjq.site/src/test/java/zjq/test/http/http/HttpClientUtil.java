@@ -8,6 +8,7 @@ import java.util.Map;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -111,18 +112,43 @@ public class HttpClientUtil {
 		
 		return result;
 	}
+	
+	public static boolean get2(String url) {
+		CloseableHttpClient client = HttpClients.createDefault();
+		HttpGet httpget = new HttpGet(url);
+		try {
+			HttpResponse response = client.execute(httpget);
+			int statusCode = response.getStatusLine().getStatusCode();
+			if (HttpStatus.SC_OK == statusCode) {
+				return true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			if (client != null) {
+				try {
+					client.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return false;
+	}
 
 	public static void main(String[] args) throws Exception{
-		List<NameValuePair> list = new ArrayList<NameValuePair>();
-		list.add(new BasicNameValuePair("version", "1.0"));
-		list.add(new BasicNameValuePair("service", "test.test"));
-		list.add(new BasicNameValuePair("format", "JSON"));
-		list.add(new BasicNameValuePair("timestamp", "2019-01-01 00:00:00"));
-		list.add(new BasicNameValuePair("terminal_type", "web"));
-		list.add(new BasicNameValuePair("terminal_info", "web"));
-		list.add(new BasicNameValuePair("sign_type", "RSA"));
-		list.add(new BasicNameValuePair("sign", ""));
-		String response = post("https://127.0.0.1:8080/test/test.htm", list);
-		System.out.println(response);
+//		List<NameValuePair> list = new ArrayList<NameValuePair>();
+//		list.add(new BasicNameValuePair("version", "1.0"));
+//		list.add(new BasicNameValuePair("service", "test.test"));
+//		list.add(new BasicNameValuePair("format", "JSON"));
+//		list.add(new BasicNameValuePair("timestamp", "2019-01-01 00:00:00"));
+//		list.add(new BasicNameValuePair("terminal_type", "web"));
+//		list.add(new BasicNameValuePair("terminal_info", "web"));
+//		list.add(new BasicNameValuePair("sign_type", "RSA"));
+//		list.add(new BasicNameValuePair("sign", ""));
+//		String response = post("https://127.0.0.1:8080/test/test.htm", list);
+//		System.out.println(response);
+		get2("https://www.baidu.com/");
 	}
 }
