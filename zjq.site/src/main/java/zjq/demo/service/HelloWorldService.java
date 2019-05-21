@@ -18,8 +18,8 @@ public class HelloWorldService {
 	}
 
 	public static void main(String[] args) {
-		ApplicationContext cpx = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
-		HelloWorldService hello = (HelloWorldService) cpx.getBean("hello");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+		HelloWorldService hello = (HelloWorldService) ctx.getBean("hello");
 		hello.say();
 	}
 }
