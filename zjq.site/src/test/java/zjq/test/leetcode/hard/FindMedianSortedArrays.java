@@ -1,7 +1,7 @@
 package zjq.test.leetcode.hard;
 
 /**
- * 寻找两个有序数组的中位数
+ * leetcode-4 寻找两个有序数组的中位数
  * 
  * @author zhangjq
  * @date 2019年5月20日下午4:03:18

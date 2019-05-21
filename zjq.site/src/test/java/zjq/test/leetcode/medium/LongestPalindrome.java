@@ -1,7 +1,7 @@
 package zjq.test.leetcode.medium;
 
 /**
- * 最长回文子串
+ * leetcode-5 最长回文子串
  * 
  * @author zhangjq
  * @date 2019年5月20日下午4:12:54

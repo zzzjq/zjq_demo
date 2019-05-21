@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 无重复最长子串
+ * leetcode-3 无重复最长子串
  * 滑动窗口算法
  * 
  * @author zhangjq
