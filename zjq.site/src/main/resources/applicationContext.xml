@@ -25,7 +25,7 @@
     <import resource="spring/mq-producer.xml"/> -->
 
     <!-- 配置<context:component-scan>就不需要配置<context:annotation-config/> -->
-    <!-- <context:annotation-config/> -->
+    <context:annotation-config/>
     <!-- 扫描包目录下的注解 -->
     <context:component-scan base-package="zjq.demo.*"/>
     
@@ -54,14 +54,11 @@
 
 	<!-- 拦截器 -->  
     <mvc:interceptors>  
-        	<!-- 多个拦截器，顺序执行 -->  
+        <!-- 多个拦截器，顺序执行 -->  
         <mvc:interceptor>  
             <mvc:mapping path="/**"/>  
             <bean class="zjq.demo.common.LoginInterceptor"></bean>  
         </mvc:interceptor>  
     </mvc:interceptors>  
-    
-    <!-- ApplicationContextAware上下文 -->
-    <bean class="zjq.demo.common.ApplicationContextUtil" />
 
 </beans>

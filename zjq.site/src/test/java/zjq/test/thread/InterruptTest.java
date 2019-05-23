@@ -18,20 +18,20 @@ public class InterruptTest implements Runnable {
 		try{
 			System.out.println("线程开始");
 			System.out.println("当前线程是否中断状态:" + Thread.currentThread().isInterrupted());
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			System.out.println("线程结束sleep");
 		}catch(InterruptedException e){
 			System.out.println("当前线程是否中断状态:" + Thread.currentThread().isInterrupted());
-			return;
 		}
 		System.out.println("当前线程是否中断状态:" + Thread.currentThread().isInterrupted());
 		System.out.println("线程死亡");
 	}
 	
-	public static void main(String[] args){
+	public static void main(String[] args) throws Exception{
 		Thread t = new Thread(new InterruptTest());
 		t.start();
 		System.out.println("中断线程t");
+		//Thread.sleep(3000);
 		t.interrupt();
 	}
 }
