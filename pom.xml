@@ -118,11 +118,11 @@
 	        <version>${slf4j.version}</version>
 	    </dependency>
 	    <!-- 日志结束 --> 
-	    <dependency>
+	    <!-- <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.0</version>
-        </dependency>
+        </dependency> -->
 	</dependencies>
 
 	<!-- 下载构建管理，可以在setting.xml里面配置，pom做个性化配置 -->
