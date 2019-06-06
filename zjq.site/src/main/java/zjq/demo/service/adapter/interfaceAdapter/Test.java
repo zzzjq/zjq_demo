@@ -9,10 +9,7 @@ public class Test {
 	public static void main(String[] args){
 		SourceInterface interface1 = new Target1();
 		SourceInterface interface2 = new Target2();
-		
 		interface1.say();
-		interface1.doo();
-		interface2.say();
 		interface2.doo();
 	}
 }
