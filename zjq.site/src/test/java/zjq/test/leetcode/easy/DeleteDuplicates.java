@@ -18,7 +18,7 @@ public class DeleteDuplicates {
 			head = head.next;
 		return head;
 	}
-
+	//单指针
 	public ListNode deleteDuplicates2(ListNode head) {
 		ListNode l = head;
 		while (l != null && l.next != null) {
