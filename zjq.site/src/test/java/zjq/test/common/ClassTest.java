@@ -22,11 +22,9 @@ public class ClassTest {
 		//获取类的变量
 		Field[] f =  c.getDeclaredFields();
 		for (Field field : f) {
-			for (Annotation a : field.getAnnotations()) {
-				System.out.println(a.annotationType());
-			}
-			System.out.println(Modifier.toString(field.getModifiers()));
-			System.out.println(field.getType().getSimpleName());
+			field.setAccessible(true);
+			System.out.println(field.getName());
+			System.out.println(field.getType().getTypeName());
 		}
 		System.out.println("-----------------------------------");
 		//获取类的方法
@@ -36,11 +34,5 @@ public class ClassTest {
 			System.out.println(method.getName());
 		}
 		System.out.println("-----------------------------------");
-		//获取类的构造器
-		Constructor[] co = c.getConstructors();
-		for(Constructor constructor : co){
-			Date date = (Date) constructor.newInstance();
-			System.out.println(date.getTime());
-		}
 	}
 }
