@@ -1,4 +1,4 @@
-package zjq.demo.service.aopservice;
+package zjq.demo.annotation;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -11,10 +11,13 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception{
 		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext(
-				"aop/spring-aop.xml");
+				"aop/annotation.xml");
 		ac.start();
-		HelloWorldService helloWorldService = (HelloWorldService) ac
-				.getBean("helloWorldServiceImpl");
-		helloWorldService.say("aaaa");
+		HelloWorldService h = (HelloWorldService) ac.getBean("helloWorldService");
+		Person person = new Person();
+		person.setName("zjq");
+		//person.setAge("18");
+		System.out.println(h.say(person));
 	}
+	
 }

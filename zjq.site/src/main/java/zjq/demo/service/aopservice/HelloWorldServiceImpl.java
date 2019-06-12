@@ -14,15 +14,16 @@ import org.springframework.stereotype.Service;
 public class HelloWorldServiceImpl implements HelloWorldService, InitializingBean {
 
 	@Override
-	public void say() {
+	public String say(String a) {
 		System.out.println("say:hello world !");
+		return a + "123";
 	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		System.out.println("HelloWorldService afterPropertiesSet");
 	}
-	
+
 	@PostConstruct
 	public void init() {
 		System.out.println("HelloWorldService init");

@@ -7,6 +7,6 @@ package zjq.demo.service.aopservice;
  */
 public interface HelloWorldService {
 
-	public void say();
+	public String say(String a);
 
 }
