@@ -18,6 +18,7 @@ public class Main {
 		person.setName("zjq");
 		//person.setAge("18");
 		System.out.println(h.say(person));
+		System.out.println(h.run(person, "hahahaha"));
 	}
 	
 }

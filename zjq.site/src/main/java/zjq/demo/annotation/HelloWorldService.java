@@ -15,4 +15,7 @@ public class HelloWorldService {
 		return person.getName() + ":" + person.getAge();
 	}
 
+	public String run(Person person, String a) {
+		return person.getName() + ":" + person.getAge() + ":" + a;
+	}
 }
