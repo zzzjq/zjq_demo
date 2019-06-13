@@ -11,7 +11,7 @@ public class Main {
 	
 	public static void main(String[] args) throws Exception{
 		ClassPathXmlApplicationContext ac = new ClassPathXmlApplicationContext(
-				"aop/annotation.xml");
+				"aop/aspectj-aop.xml");
 		ac.start();
 		HelloWorldService h = (HelloWorldService) ac.getBean("helloWorldService");
 		Person person = new Person();

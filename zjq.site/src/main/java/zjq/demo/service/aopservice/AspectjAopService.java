@@ -22,7 +22,7 @@ import com.alibaba.fastjson.JSON;
  **/
 @Aspect
 @Service
-public class AnotionAopService {
+public class AspectjAopService {
 
 	@Pointcut("execution(* zjq.demo.service.aopservice.HelloWorldService.*(..))")
 	public void pointcut() {

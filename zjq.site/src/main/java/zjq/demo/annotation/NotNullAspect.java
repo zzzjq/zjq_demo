@@ -24,7 +24,7 @@ public class NotNullAspect {
 	//限定两个参数，第二个为string的方法，其他方法不会进入切面
 	//@Pointcut("execution(* zjq.demo.annotation.HelloWorldService.*(*, String))")
 	//@Pointcut("execution(* zjq.demo.annotation.HelloWorldService.*(..))")
-	public void pointcut(Person i, String j) {
+	private void pointcut(Person i, String j) {
 		
 	}
 
@@ -41,7 +41,7 @@ public class NotNullAspect {
 	 * @throws Throwable
 	 */
 	@Around(value = "pointcut(i,j)")
-	public Object around(ProceedingJoinPoint joinPoint, Person i, String j) throws Throwable {
+	private Object around(ProceedingJoinPoint joinPoint, Person i, String j) throws Throwable {
 		// 获取方法参数1 通过joinpoint
 		Object[] args = joinPoint.getArgs();
 		// 获取方法参数2 通过限定args(),这样没有joinPoint的地方也能拿到
@@ -56,7 +56,7 @@ public class NotNullAspect {
 	}
 	
 	@AfterReturning(value = "pointcut(i, j)",returning = "returnValue")
-	public void after(Object returnValue, Person i, String j) {
+	private void after(Object returnValue, Person i, String j) {
 		System.out.println("returnValue:" + returnValue);
 	}
 

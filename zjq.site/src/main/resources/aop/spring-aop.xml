@@ -13,7 +13,7 @@
     <context:component-scan base-package="zjq.demo.service.aopservice" />
     <aop:aspectj-autoproxy />
         
-    <!-- <bean id="timeAopService" class="zjq.demo.service.aopservice.TimeAopService"/>    
+    <bean id="timeAopService" class="zjq.demo.service.aopservice.SpringAopService"/>    
             
     <aop:config>
    		<aop:aspect ref="timeAopService">
@@ -21,5 +21,5 @@
    			<aop:before method="getTime" pointcut-ref="pointcut"/>
    			<aop:after method="end" pointcut-ref="pointcut"/>
    		</aop:aspect>
-    </aop:config> -->
+    </aop:config>
 </beans>
