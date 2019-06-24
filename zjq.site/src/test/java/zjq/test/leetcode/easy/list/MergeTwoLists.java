@@ -1,4 +1,6 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.list;
+
+import zjq.test.leetcode.ListNode;
 
 /**
  * leetcode-21 合并两个有序链表
@@ -8,14 +10,6 @@ package zjq.test.leetcode.easy;
  *
  **/
 public class MergeTwoLists {
-	class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
-	}
 
 	/** 递归 **/
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {

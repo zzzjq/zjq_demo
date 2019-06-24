@@ -1,4 +1,6 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.tree;
+
+import zjq.test.leetcode.TreeNode;
 
 /**
  * leetcode-687 最长同值路径
@@ -35,13 +37,4 @@ public class LongestUnivaluePath {
 		return Math.max(l, r);
 	}
 
-	public class TreeNode {
-		int val;
-		TreeNode left;
-		TreeNode right;
-
-		TreeNode(int x) {
-			val = x;
-		}
-	}
 }

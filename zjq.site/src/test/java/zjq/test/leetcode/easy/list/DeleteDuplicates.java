@@ -1,4 +1,6 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.list;
+
+import zjq.test.leetcode.ListNode;
 
 /**
  * leetcode-83. 删除排序链表中的重复元素
@@ -29,15 +31,6 @@ public class DeleteDuplicates {
 			}
 		}
 		return head;
-	}
-	
-	class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
 	}
 
 }

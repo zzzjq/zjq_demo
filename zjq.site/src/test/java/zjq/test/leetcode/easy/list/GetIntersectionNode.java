@@ -1,4 +1,6 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.list;
+
+import zjq.test.leetcode.ListNode;
 
 /**
  * leetcode 160. 相交链表
@@ -19,16 +21,6 @@ public class GetIntersectionNode {
 			b = b == null ? headA : b.next;
 		}
 		return a;
-	}
-
-	class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
 	}
 
 }
