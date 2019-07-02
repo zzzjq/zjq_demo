@@ -9,7 +9,7 @@ package zjq.test.leetcode.easy;
  * @date 2019年6月25日下午7:39:23
  *
  **/
-public class singleNumber {
+public class SingleNumber {
 
 	public int singleNumber(int[] nums) {
 		int i = 0;
