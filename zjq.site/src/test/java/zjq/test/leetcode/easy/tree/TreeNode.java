@@ -1,4 +1,4 @@
-package zjq.test.leetcode;
+package zjq.test.leetcode.easy.tree;
 
 /**
  * 树节点

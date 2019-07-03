@@ -1,7 +1,5 @@
 package zjq.test.leetcode.easy.tree;
 
-import zjq.test.leetcode.TreeNode;
-
 /**
  * 
  * @author zhangjingqi
