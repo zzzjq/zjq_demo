@@ -28,8 +28,6 @@
 
     <!-- 配置<context:component-scan>就不需要配置<context:annotation-config/> -->
     <context:annotation-config/>
-    <!-- aop -->
-    <aop:aspectj-autoproxy />
     <!-- 扫描包目录下的注解 -->
     <context:component-scan base-package="zjq.demo.*"/>
     

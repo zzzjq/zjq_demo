@@ -18,7 +18,7 @@ public class HelloWorldService {
 	}
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath*:applicationContext.xml");
 		HelloWorldService hello = (HelloWorldService) ctx.getBean("hello");
 		hello.say();
 	}
