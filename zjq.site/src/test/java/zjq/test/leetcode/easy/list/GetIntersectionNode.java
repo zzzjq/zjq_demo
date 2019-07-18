@@ -3,6 +3,8 @@ package zjq.test.leetcode.easy.list;
 /**
  * leetcode 160. 相交链表
  * 
+ * 双指针
+ * 
  * @author zhangjingqi
  * @date 2019年6月24日下午7:52:20
  *
