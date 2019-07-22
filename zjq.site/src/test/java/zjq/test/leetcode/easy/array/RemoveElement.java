@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.array;
 
 /**
  * leetcode-27 移除元素

@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.array;
 
 /**
  * leetcode-26 删除排序数组中的重复项

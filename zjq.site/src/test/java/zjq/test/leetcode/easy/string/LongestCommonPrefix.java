@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.string;
 
 /**
  * leetcode-14 最长公共前缀

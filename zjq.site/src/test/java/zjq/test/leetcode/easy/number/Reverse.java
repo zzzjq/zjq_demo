@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.number;
 
 /**
  * LeetCode-7 整数反转 简单

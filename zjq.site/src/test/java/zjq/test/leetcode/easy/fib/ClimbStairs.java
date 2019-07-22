@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.fib;
 
 /**
  * leetcode 70. 爬楼梯

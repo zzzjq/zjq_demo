@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.number;
 
 /**
  * leetcode-136. 只出现一次的数字

@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.array;
 
 /**
  * leetcode-88 合并两个有序数组

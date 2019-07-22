@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.number;
 
 /**
  * leetcode-167. 两数之和 II - 输入有序数组

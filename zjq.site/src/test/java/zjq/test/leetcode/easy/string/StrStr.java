@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.string;
 
 /**
  * leetcode-28. 实现strStr() 暴力 || KMP

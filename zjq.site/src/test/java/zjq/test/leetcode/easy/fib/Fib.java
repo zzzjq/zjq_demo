@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.fib;
 
 /**
  * leetcode 509. 斐波那契数

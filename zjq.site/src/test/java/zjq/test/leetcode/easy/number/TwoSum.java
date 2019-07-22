@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.number;
 
 import java.util.HashMap;
 import java.util.Map;

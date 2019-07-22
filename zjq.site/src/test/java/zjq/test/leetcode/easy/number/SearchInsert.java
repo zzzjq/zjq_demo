@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy;
+package zjq.test.leetcode.easy.number;
 
 /**
  * leetcode-35. 搜索插入位置
