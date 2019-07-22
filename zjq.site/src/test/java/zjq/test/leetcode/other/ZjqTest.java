@@ -19,7 +19,7 @@ public class ZjqTest {
 
 	public static void main(String[] args) {
 		int[] a = { 1, 1, 2, 3, 5, 5, 4, 6, 8, 7, 7, 8, 6, 9, 9, 9, 2, 3 };
-		int k = 3;
+		int k = 4;
 		int num = findKthLargest(a, k);
 		System.out.printf("第%d大的数字是%d", k, num);
 	}
