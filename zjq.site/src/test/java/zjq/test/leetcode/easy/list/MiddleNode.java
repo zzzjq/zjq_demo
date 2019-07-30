@@ -1,5 +1,7 @@
 package zjq.test.leetcode.easy.list;
 
+import zjq.test.leetcode.ListNode;
+
 /**
  * Leetcode 876. 链表的中间结点
  * 

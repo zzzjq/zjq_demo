@@ -1,5 +1,7 @@
 package zjq.test.leetcode.easy.tree;
 
+import zjq.test.leetcode.TreeNode;
+
 /**
  * Leetcode 110. 平衡二叉树
  * 

@@ -1,4 +1,4 @@
-package zjq.test.leetcode.easy.list;
+package zjq.test.leetcode;
 
 /**
  * 链表节点

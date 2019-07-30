@@ -1,5 +1,7 @@
 package zjq.test.leetcode.easy.list;
 
+import zjq.test.leetcode.ListNode;
+
 /**
  * Leetcode 237. 删除链表中的节点
  * 

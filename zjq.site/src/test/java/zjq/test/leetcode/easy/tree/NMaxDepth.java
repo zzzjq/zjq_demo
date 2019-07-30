@@ -1,5 +1,7 @@
 package zjq.test.leetcode.easy.tree;
 
+import zjq.test.leetcode.Node;
+
 /**
  * Leetcode 559. N叉树的最大深度
  * 

@@ -1,5 +1,7 @@
 package zjq.test.leetcode.easy.tree;
 
+import zjq.test.leetcode.TreeNode;
+
 /**
  * leetcode-101. 对称二叉树
  * 

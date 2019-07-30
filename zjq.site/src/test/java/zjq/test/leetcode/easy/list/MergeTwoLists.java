@@ -1,5 +1,7 @@
 package zjq.test.leetcode.easy.list;
 
+import zjq.test.leetcode.ListNode;
+
 /**
  * leetcode-21 合并两个有序链表
  * 

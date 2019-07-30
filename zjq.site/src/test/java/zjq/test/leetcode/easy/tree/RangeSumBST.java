@@ -1,5 +1,7 @@
 package zjq.test.leetcode.easy.tree;
 
+import zjq.test.leetcode.TreeNode;
+
 /**
  * Leetcode 938. 二叉搜索树的范围和
  * 

@@ -1,5 +1,7 @@
 package zjq.test.leetcode.easy.list;
 
+import zjq.test.leetcode.ListNode;
+
 /**
  * Leetcode 203. 移除链表元素
  * 

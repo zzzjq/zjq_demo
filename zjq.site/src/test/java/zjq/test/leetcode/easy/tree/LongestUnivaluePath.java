@@ -1,5 +1,7 @@
 package zjq.test.leetcode.easy.tree;
 
+import zjq.test.leetcode.TreeNode;
+
 /**
  * leetcode-687 最长同值路径
  * 递归
