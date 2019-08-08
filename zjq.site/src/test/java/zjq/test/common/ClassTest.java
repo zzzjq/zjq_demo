@@ -1,10 +1,7 @@
 package zjq.test.common;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.util.Date;
 
 /**
@@ -30,9 +27,8 @@ public class ClassTest {
 		//获取类的方法
 		Method[] m = c.getDeclaredMethods();
 		for(Method method : m){
-			method.getAnnotations();
 			System.out.println(method.getName());
 		}
-		System.out.println("-----------------------------------");
 	}
+
 }
