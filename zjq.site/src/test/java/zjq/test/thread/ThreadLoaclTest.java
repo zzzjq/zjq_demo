@@ -20,11 +20,10 @@ public class ThreadLoaclTest {
 	public static void main(String[] args){
 		Thread[] threads = new Thread[10];
 		for(int i=0;i<threads.length;i++){
-			final int t = i;
 			threads[i] = new Thread(new Runnable() {		
 				@Override
 				public void run() {
-					System.out.println(Thread.currentThread().getName() + ":" + getInt() + t);
+					System.out.println(Thread.currentThread().getName() + ":" + getInt());
 				}
 			});
 			threads[i].start();
