@@ -23,6 +23,7 @@ public class ZjqAspect {
 
 	@Around(value = "pointCut()")
 	public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
+		System.out.println("target:" + joinPoint.getTarget());
 		MethodSignature method = (MethodSignature) joinPoint.getSignature();
 		Zjq zjq = method.getMethod().getAnnotation(Zjq.class);
 		System.out.println(zjq.value());
