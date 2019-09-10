@@ -23,8 +23,8 @@ public class InnerClassTest {
 	public A aa;
 	public B bb;
 
-	//静态内部类
-	public static class A {
+	//静态内部类, public所有外部类可以访问，private只能自己的外部类能访问
+	private static class A {
 		private static String str = "A:static object";
 		private String str2 = "A:object";
 
