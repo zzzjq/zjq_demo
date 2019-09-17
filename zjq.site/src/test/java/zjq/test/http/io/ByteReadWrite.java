@@ -170,7 +170,7 @@ public class ByteReadWrite {
 		System.out.println(result);
 		Thread.sleep(1000L);
 		System.out.println(read(result));
-		//System.out.println(readeline("/Users/idealife/zjq/read.txt"));
+		System.out.println(readeline("/Users/idealife/zjq/read.txt"));
 	}
 
 }

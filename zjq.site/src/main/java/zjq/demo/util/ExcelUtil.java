@@ -194,7 +194,7 @@ public class ExcelUtil {
 	}
 	
 	public static void main(String[] args){
-		File file = new File("F://123.xlsx");
+		File file = new File("/Users/idealife/zjq/1.xlsx");
 		try {
 			List<String[]> list = readExcel(file);
 			for(String[] str : list){
@@ -203,8 +203,6 @@ public class ExcelUtil {
 				}
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 }
