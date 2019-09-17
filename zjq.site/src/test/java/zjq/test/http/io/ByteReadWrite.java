@@ -27,9 +27,9 @@ public class ByteReadWrite {
 	 * @param fileDate-base64编码后的文件字符串
 	 * @param fileName
 	 */
-	public static void writeFile(String fileData, String fileName, String filepath) {
+	public static void writeFile(String fileData, String filepath) {
 		try (ByteArrayInputStream in = new ByteArrayInputStream(Base64.getDecoder().decode(fileData));
-				FileOutputStream out = new FileOutputStream(new File(filepath + fileName));) {
+				FileOutputStream out = new FileOutputStream(new File(filepath));) {
 			int len = 0;
 			byte[] bt = new byte[1024];
 			while ((len = in.read(bt)) != -1) {
@@ -40,23 +40,25 @@ public class ByteReadWrite {
 	}
 
 	/****
-	 * 从本地读取合同文件
+	 * 从本地读取文件并编码
 	 * 
 	 * @param filepath
 	 * @return
 	 */
 	public static String readFile(String filepath) {
+		if (filepath == null || "".equals(filepath.trim()))
+			return null;
 		String result = null;
 		try (FileInputStream in = new FileInputStream(new File(filepath));
-				ByteArrayOutputStream out = new ByteArrayOutputStream();){
+				ByteArrayOutputStream out = new ByteArrayOutputStream();) {
 			int len = 0;
 			byte[] bt = new byte[1024];
 			while ((len = in.read(bt)) != -1) {
 				out.write(bt, 0, len);
 			}
-			result = new String(Base64.getEncoder().encode(out.toByteArray()));
+			result = new String(Base64.getEncoder().encode(out.toByteArray()), "utf-8");
 		} catch (Exception e) {
-		} 
+		}
 		return result;
 	}
 
@@ -93,11 +95,15 @@ public class ByteReadWrite {
 		byte[] b = Base64.getDecoder().decode(msg.getBytes());
 		StringBuffer sb = new StringBuffer();
 		try (ByteArrayInputStream in = new ByteArrayInputStream(b)) {
-			int len;
 			byte[] buf = new byte[1024];
-			while ((len = in.read(buf)) != -1) {
+			while (in.read(buf) != -1) {
 				sb.append(new String(buf));
 			}
+			//单个读取
+//			int len;
+//			while ((len = in.read()) != -1) {
+//				System.out.println((char)len);
+//			}
 		} catch (Exception e) {
 		}
 		return sb.toString();
@@ -122,13 +128,35 @@ public class ByteReadWrite {
 				String newLine = System.getProperty("line.separator");
 				sb.append(newLine);
 			}
-			//读取字符
+			// 单个读取
 //			int len;
 //			while((len = reader.read()) != -1) {
 //				System.out.println((char)len);
 //			}
 			return sb.toString();
 		} catch (IOException e) {
+			return null;
+		}
+	}
+
+	/**
+	 * 字符读取文件
+	 * 
+	 * @param path
+	 * @return
+	 */
+	public static String readeline(String path) {
+		if (path == null || "".equals(path.trim()))
+			return null;
+		StringBuffer sb = new StringBuffer();
+		String str = null;
+		try (FileInputStream in = new FileInputStream(new File(path));
+				BufferedReader reader = new BufferedReader(new InputStreamReader(in));) {
+			while ((str = reader.readLine()) != null) {
+				sb.append(str);
+			}
+			return sb.toString();
+		} catch (Exception e) {
 			return null;
 		}
 	}
@@ -141,7 +169,8 @@ public class ByteReadWrite {
 		String result = writeToBase64String(list);
 		System.out.println(result);
 		Thread.sleep(1000L);
-		System.out.println(reader(result));
-	} 
+		System.out.println(read(result));
+		//System.out.println(readeline("/Users/idealife/zjq/read.txt"));
+	}
 
 }
