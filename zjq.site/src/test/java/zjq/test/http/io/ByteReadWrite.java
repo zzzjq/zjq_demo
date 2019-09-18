@@ -34,6 +34,7 @@ public class ByteReadWrite {
 			byte[] bt = new byte[1024];
 			while ((len = in.read(bt)) != -1) {
 				out.write(bt, 0, len);
+				out.flush();
 			}
 		} catch (Exception e) {
 		}
@@ -55,6 +56,7 @@ public class ByteReadWrite {
 			byte[] bt = new byte[1024];
 			while ((len = in.read(bt)) != -1) {
 				out.write(bt, 0, len);
+				out.flush();
 			}
 			result = new String(Base64.getEncoder().encode(out.toByteArray()), "utf-8");
 		} catch (Exception e) {
@@ -77,6 +79,7 @@ public class ByteReadWrite {
 				out.write(str.getBytes("utf-8"));
 				String newLine = System.getProperty("line.separator");
 				out.write(newLine.getBytes());
+				out.flush();
 			}
 			result = new String(Base64.getEncoder().encode(out.toByteArray()), "utf-8");
 		} catch (Exception e) {
@@ -170,7 +173,7 @@ public class ByteReadWrite {
 		System.out.println(result);
 		Thread.sleep(1000L);
 		System.out.println(read(result));
-		System.out.println(readeline("/Users/idealife/zjq/read.txt"));
+		System.out.println(readFile("/Users/idealife/zjq/read.txt"));
 	}
 
 }
