@@ -10,7 +10,8 @@ public class ExceptionTest {
 
 	public static void main(String[] args) {
 		try {
-			throw new Exception("1111");
+			//throw new Exception("1111");
+			throw new BizException("2222");
 		} catch (BizException e) {
 			System.out.println(e.getMessage());
 			//加了return，不会执行222；finally不管return，都会执行
@@ -20,6 +21,6 @@ public class ExceptionTest {
 		} finally {
 			System.out.println("finally block");
 		}
-		System.out.println("222");
+		System.out.println("3333");
 	}
 }
