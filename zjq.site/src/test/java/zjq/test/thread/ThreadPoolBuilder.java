@@ -31,7 +31,7 @@ public class ThreadPoolBuilder {
 	}
 
 	private static class InnerPoolBuilder {
-		private static ThreadPoolBuilder threadPoolBuilder = new ThreadPoolBuilder();
+		private static final ThreadPoolBuilder threadPoolBuilder = new ThreadPoolBuilder();
 	}
 
 	public static ThreadPoolBuilder build() {

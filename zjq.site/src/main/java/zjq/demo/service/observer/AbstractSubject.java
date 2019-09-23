@@ -8,10 +8,10 @@ import java.util.List;
  * @time:2017年5月3日 下午4:48:57
  * @version:v1.0
  */
-public abstract class AbstractSubject implements Subject{
-	
+public abstract class AbstractSubject implements Subject {
+
 	private List<Observer> list = new ArrayList<Observer>();
-	
+
 	@Override
 	public void add(Observer observer) {
 		list.add(observer);
@@ -24,7 +24,7 @@ public abstract class AbstractSubject implements Subject{
 
 	@Override
 	public void notifyAlls() {
-	    list.stream().forEach(e -> e.update());
+		list.stream().forEach(e -> e.update());
 	}
 
 }

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Plate {
 	/** 装鸡蛋的盘子*/
-	List<Object> eggs = new ArrayList<Object>();
+	final List<Object> eggs = new ArrayList<Object>();
 	/** 取鸡蛋*/
 	public synchronized Object getEgg(){
 		while (eggs.size()==0){
