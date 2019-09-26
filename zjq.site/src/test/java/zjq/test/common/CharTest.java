@@ -2,7 +2,7 @@ package zjq.test.common;
 
 /**
  * 一个char占2个字节（byte），char类型也可以存储一个汉字，长度固定
- * String UTF-8 中午占3个字节，英文占1个字节,GBK中文占2个字节
+ * String UTF-8 中文占3个字节，英文占1个字节,GBK中文占2个字节
  * 
  * @author:zhangjq
  * @time:2017年11月8日 下午3:38:01
