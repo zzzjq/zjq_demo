@@ -1,4 +1,4 @@
-package zjq.test.http.http;
+package zjq.test.http;
 
 import org.apache.http.*;
 import org.apache.http.client.entity.UrlEncodedFormEntity;

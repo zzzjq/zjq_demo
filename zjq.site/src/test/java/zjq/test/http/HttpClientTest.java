@@ -1,4 +1,4 @@
-package zjq.test.http.http;
+package zjq.test.http;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

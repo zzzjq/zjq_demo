@@ -1,4 +1,4 @@
-package zjq.test.http.http;
+package zjq.test.http;
 
 import java.io.IOException;
 import java.util.ArrayList;

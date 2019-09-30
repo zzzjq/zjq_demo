@@ -1,4 +1,4 @@
-package zjq.test.http.socket;
+package zjq.test.socket;
 
 import java.io.*;
 import java.net.ServerSocket;

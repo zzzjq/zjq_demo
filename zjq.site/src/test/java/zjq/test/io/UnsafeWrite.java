@@ -1,4 +1,4 @@
-package zjq.test.http.io;
+package zjq.test.io;
 
 import java.io.File;
 import java.io.FileOutputStream;
