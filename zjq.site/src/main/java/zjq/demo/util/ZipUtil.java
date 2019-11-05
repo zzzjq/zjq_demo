@@ -3,44 +3,50 @@ package zjq.demo.util;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 /**
+ * zip压缩流
+ * 
  * @author:zhangjq
  * @time:2017年6月29日 下午2:18:46
  * @version:v1.0
  */
 public class ZipUtil {
 	
-	public static String compress(String str) throws IOException {
+	public static String compress(String str) {
 		if (str == null || str.length() == 0) {
 			return str;
 		}
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		GZIPOutputStream gzip = new GZIPOutputStream(out);
-		gzip.write(str.getBytes("UTF-8"));
-		gzip.close();
-		return out.toString("ISO-8859-1");
+		try (ByteArrayOutputStream out = new ByteArrayOutputStream();
+				GZIPOutputStream gzip = new GZIPOutputStream(out);) {
+			gzip.write(str.getBytes("UTF-8"));
+			gzip.close();
+			return out.toString("ISO-8859-1");
+		} catch (Exception e) {
+			return null;
+		}
+
 	}
 
-	public static String uncompress(String str) throws IOException {
+	public static String uncompress(String str) {
 		if (str == null || str.length() == 0) {
 			return str;
 		}
-		ByteArrayOutputStream out = new ByteArrayOutputStream();
-		ByteArrayInputStream in = new ByteArrayInputStream(
-				str.getBytes("ISO-8859-1"));
-		GZIPInputStream gunzip = new GZIPInputStream(in);
-		byte[] buffer = new byte[256];
-		int n;
-		while ((n = gunzip.read(buffer)) >= 0) {
-			out.write(buffer, 0, n);
+		try (ByteArrayOutputStream out = new ByteArrayOutputStream();
+				ByteArrayInputStream in = new ByteArrayInputStream(str.getBytes("ISO-8859-1"));
+				GZIPInputStream gunzip = new GZIPInputStream(in);) {
+			byte[] buffer = new byte[256];
+			int n;
+			while ((n = gunzip.read(buffer)) >= 0) {
+				out.write(buffer, 0, n);
+			}
+			// toString()使用平台默认编码，也可以显式的指定如toString("GBK")
+			return out.toString("UTF-8");
+		} catch (Exception e) {
+			return null;
 		}
-		// toString()使用平台默认编码，也可以显式的指定如toString("GBK")
-		return out.toString("UTF-8");
 	}
 
 	public static void main(String[] args) throws IOException {

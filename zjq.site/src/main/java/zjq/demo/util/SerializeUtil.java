@@ -4,6 +4,9 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Base64;
+
+import zjq.dao.model.Person;
 
 /**
  * java 序列化工具
@@ -21,17 +24,13 @@ public class SerializeUtil {
 	 * @return
 	 */
 	public static byte[] serialize(Object object) {
-		ObjectOutputStream out = null;
-		ByteArrayOutputStream bout = null;
-		try {
-			bout = new ByteArrayOutputStream();
-			out = new ObjectOutputStream(bout);
+		try (ByteArrayOutputStream bout = new ByteArrayOutputStream();
+				ObjectOutputStream out = new ObjectOutputStream(bout);) {
 			out.writeObject(object);
-			byte[] bytes = bout.toByteArray();
-			return bytes;
+			return bout.toByteArray();
 		} catch (Exception e) {
+			return null;
 		}
-		return null;
 	}
 
 	/***
@@ -41,14 +40,19 @@ public class SerializeUtil {
 	 * @return
 	 */
 	public static Object unserialize(byte[] bytes) {
-		ByteArrayInputStream in = null;
-		try {
-			in = new ByteArrayInputStream(bytes);
-			ObjectInputStream oin = new ObjectInputStream(in);
+		try(ByteArrayInputStream in = new ByteArrayInputStream(bytes);
+				ObjectInputStream oin = new ObjectInputStream(in);) {
 			return oin.readObject();
 		} catch (Exception e) {
+			return null;
 		}
-		return null;
+	}
+	
+	public static void main(String[] args) {
+		Person p = new Person("zjq", 18);
+		byte[] b = serialize(p);
+		System.out.println(new String(Base64.getEncoder().encode(b)));
+		System.out.println(unserialize(b).toString());
 	}
 
 }
