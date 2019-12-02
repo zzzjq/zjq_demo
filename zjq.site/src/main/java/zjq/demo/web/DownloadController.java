@@ -50,34 +50,23 @@ public class DownloadController {
 		return entity;
 	}
 	
-	//文件下载
+	// 文件下载
 	@RequestMapping("/download2")
-	public ModelAndView download2(HttpServletRequest request,
-			HttpServletResponse response) throws Exception{
-		InputStream inputStream  = null;
-		OutputStream os = null;
-		try {
-			String fileName = "";
-			inputStream = DownloadController.class.getResourceAsStream("/other/1.txt");
-			fileName = "1.txt";
+	public ModelAndView download2(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		try (InputStream inputStream = DownloadController.class.getResourceAsStream("/other/1.txt");
+				OutputStream os = new BufferedOutputStream(response.getOutputStream());) {
 			response.setHeader("content-type", "text/html;charset=UTF-8");
-			response.addHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode(fileName, "utf-8"));
-			response.setBufferSize(1024);        
-			os = new BufferedOutputStream(response.getOutputStream());
+			response.addHeader("Content-Disposition", "attachment; filename=" + URLEncoder.encode("1.txt", "utf-8"));
+			response.setBufferSize(1024);
 			byte[] b = new byte[1024];
 			int len = 0;
 			while ((len = inputStream.read(b)) > 0) {
 				os.write(b, 0, len);
 				os.flush();
 			}
-			os.close();
-			inputStream.close();
 			return null;
 		} catch (Throwable e) {
 			throw new RuntimeException(e);
-		}finally{
-			os = null;
-			inputStream = null;
 		}
 	}
 
