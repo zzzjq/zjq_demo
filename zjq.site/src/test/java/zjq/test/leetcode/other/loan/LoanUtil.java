@@ -20,7 +20,7 @@ import zjq.demo.util.DateUtil;
 public class LoanUtil {
 
 	public static List<Loan> sortLoan(List<Loan> list) {
-		if(null == list || list.size() < 2)
+		if(null == list || list.size() < 1)
 			return null;
 		return list.stream().sorted(Comparator.comparing(Loan::getOvdDays)
 				.thenComparing(Loan::getRate).reversed()
